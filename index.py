@@ -24,9 +24,17 @@ while menu != 0:
     print('Ver hoteis - Exibindos todos os hotéis: ')
     for i in range(len(hoteis)):
       print(f'{i+1} - {hoteis[i].name}')
-      hotelSelecionado = int(input('Selecione o hotel: '))
-      print(f'Hotel Selecionado: {hoteis[hotelSelecionado-1].name}\n Capacidade do hotel: ')
+    hotelSelecionado = int(input('Selecione o hotel para ver os detalhes: '))
+    print(f'Hotel Selecionado: {hoteis[hotelSelecionado-1].name}\n Ocupação do hotel: {hoteis[hotelSelecionado-1].occupancy}')
+    if len(hoteis[hotelSelecionado-1].guests) > 0:
+      for h in range(len(hoteis[hotelSelecionado-1].guests)):
+        print(f'{h+1} - {hoteis[hotelSelecionado-1].guests[h].name}')
 
+  elif res == 3:
+    print('Deletar hotel - Exibindo todos os hotéis: ')
+    for i in range (len(hoteis)):
+      print(f'{i+1} - {hoteis[i].name}')
+      
   elif res == 8:
     print('Saindo...')
     menu = 0
